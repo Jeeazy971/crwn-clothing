@@ -38,6 +38,8 @@ const SignUpForm = () => {
         } catch (e) {
             if (e.code === 'auth/email-already-in-use') {
                 alert('Cette adresse à déjà été utilisé');
+            } else if (e.code === 'auth/weak-password') {
+                alert('Le mot de passe doit avoir plus de 6 caractères');
             } else {
                 console.log("Une erreur est survenue à la création de l'utilisateur", e);
             }
